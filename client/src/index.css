@@ -1,0 +1,41 @@
+@import url(https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i|PT+Serif:400,400i,700,700i&amp;display=swap);
+* {
+    padding: 0;
+    margin: 0;
+}
+html {
+    box-sizing: border-box;
+    font-size: clamp(12px, 12px + 0.2vw, 18px);
+    font-family: "PT Sans", "sans-serif";
+}
+body,
+input,
+textarea,
+table {
+    font: inherit;
+}
+body {
+    background-color: rgb(249, 250, 224);
+}
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+h1,
+h2,
+h3,
+h4 {
+    font-size: 1em;
+}
+a {
+    color: black;
+}
+div#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+}
+main {
+    flex-grow: 1;
+}

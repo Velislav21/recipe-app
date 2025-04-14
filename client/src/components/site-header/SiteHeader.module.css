@@ -1,0 +1,35 @@
+header.site-header {
+    background-color: #fff;
+    padding: 0.5em 1.5em;
+}
+
+h1.text {
+    font-size: 2em;
+    color: #f97316;
+}
+
+form.search-form {
+    border: 2px solid #fff;
+    margin: 1em 0;
+    background-color: #f3f4f6;
+    color: #c6c9ce;
+    border-radius: 10rem;
+    padding: 0.7em 1em;
+}
+form.search-form:has(input:focus) {
+    border-color: #fdba74;
+}
+
+p.input-container {
+    display: flex;
+    gap: 1em;
+}
+p.input-container input {
+    background: transparent;
+    border: none;
+    font-size: 1.2em;
+
+    &:focus {
+        outline: none;
+    }
+}
