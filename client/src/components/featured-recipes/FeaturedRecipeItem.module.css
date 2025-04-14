@@ -1,0 +1,39 @@
+.featured-recipe-item {
+    position: relative;
+    width: 26rem;
+    height: 18rem;
+}
+
+.featured-recipe-item img {
+    border-radius: 1rem;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(60%);
+}
+
+div.recipe-details {
+    padding: 0.5em 1.5em;
+    position: absolute;
+    top: 12.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: #fff;
+}
+div.recipe-details h3 {
+    font-size: 1.4em;
+    font-weight: 300;
+    margin-bottom: 0.5em;
+}
+div.recipe-details span {
+    margin-right: 0.5em;
+}
+div.recipe-details div {
+    display: flex;
+    gap: 1em;
+}
+div.recipe-details div p {
+    display: flex;
+    gap: 0.5em;
+}
