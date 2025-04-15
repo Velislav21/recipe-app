@@ -11,7 +11,7 @@ export default function PopularRecipeItem() {
                 />
             </div>
             <div className={styles["recipe-details"]}>
-                <p className={styles["recipe-title"]}>Some Pasta</p>
+                <p className={styles["recipe-title"]}>Some Pasdasdasdaasdadasdasasdadsadasasta</p>
                 <p className={styles["prep-time"]}>
                     <Clock size={14} />
                     <span>25 min</span>

@@ -9,6 +9,9 @@ export default function PopularRecipes() {
             <div className={styles["popular-recipes-container"]}>
                 <PopularRecipeItem />
                 <PopularRecipeItem />
+                <PopularRecipeItem />
+                <PopularRecipeItem />
+                <PopularRecipeItem />
             </div>
         </section>
     );

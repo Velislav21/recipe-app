@@ -1,9 +1,14 @@
 div.recipe-container {
     display: flex;
     align-items: center;
-    gap: 1em;
     background-color: rgb(255, 255, 255);
     border-radius: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+    /* max-width: 17em; */
+    &:hover {
+        transform: translateY(-7px);
+    }
 }
 
 div.img-container {
@@ -17,9 +22,15 @@ div.img-container img {
     border-top-left-radius: 1rem;
     border-bottom-left-radius: 1rem;
 }
-
+div.recipe-details {
+    padding: 0 1em;
+}
 
 p.recipe-title {
+    text-overflow: clip;
+    overflow-y: hidden;
+    white-space: no-wrap;
+    max-width: 10ch;
     font-weight: 500;
     font-size: 1.2em;
 }
