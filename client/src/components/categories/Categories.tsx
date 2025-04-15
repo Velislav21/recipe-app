@@ -47,7 +47,7 @@ export default function Categories() {
                     </button>
                 ))}
             </div>
-            
+
         </section>
     );
 }
