@@ -7,8 +7,3 @@ section.featured-recipes-section div.featured-recipes-container {
     flex-wrap: wrap;
     gap: 1.5em;
 }
-
-section.featured-recipes-section h1 {
-    font-size: 1.5em;
-    margin: 1em 0;
-}

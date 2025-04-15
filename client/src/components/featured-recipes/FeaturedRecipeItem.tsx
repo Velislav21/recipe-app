@@ -1,5 +1,6 @@
 import styles from "./FeaturedRecipeItem.module.css";
-import { Clock } from "lucide-react";
+import { Clock, UsersIcon } from "lucide-react";
+
 export default function FeaturedRecipesItem() {
     return (
         <div className={styles["featured-recipe-item"]}>
@@ -11,11 +12,11 @@ export default function FeaturedRecipesItem() {
                 <h3>Some pasta on the picture</h3>
                 <div>
                     <p>
-                        <Clock size={20} />
+                        <Clock size={16} />
                         <span>25 min</span>
                     </p>
                     <p>
-                        <Clock size={20} />
+                        <UsersIcon size={16} />
                         <span>2 servings</span>
                     </p>
                 </div>

@@ -1,0 +1,26 @@
+section.category-section {
+    padding: 0.5em 1em;
+}
+.categories-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    /* max-width: 30em; */
+}
+
+button.category {
+    max-width: 20em;
+    height: 7em;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5em;
+    border: none;
+    background: rgb(255, 255, 255);
+    border-radius: 1rem;
+    cursor: pointer;
+}
+.icon {
+    font-size: 1.3em;
+}
