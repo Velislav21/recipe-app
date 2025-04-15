@@ -1,13 +1,14 @@
-section.featured-recipes-container {
+section.featured-recipes-section {
     padding: 0.5em 1.5em;
 }
 
-section.featured-recipes-container div {
+section.featured-recipes-section div.featured-recipes-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 2em;
-    margin: 1em 0;
+    gap: 1.5em;
 }
-section.featured-recipes-container h1 {
-    font-size: 2em;
+
+section.featured-recipes-section h1 {
+    font-size: 1.5em;
+    margin: 1em 0;
 }
