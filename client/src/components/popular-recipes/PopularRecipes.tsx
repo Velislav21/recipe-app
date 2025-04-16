@@ -10,8 +10,6 @@ export default function PopularRecipes() {
                 <PopularRecipeItem />
                 <PopularRecipeItem />
                 <PopularRecipeItem />
-                <PopularRecipeItem />
-                <PopularRecipeItem />
             </div>
         </section>
     );
