@@ -1,0 +1,8 @@
+section.category-section {
+    padding: 0.5em 1em;
+}
+.categories-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
+}

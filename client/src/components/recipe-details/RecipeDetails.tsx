@@ -7,9 +7,11 @@ export default function RecipeDetails() {
     return (
         <>
             <RecipeDetailsHeader />
-            <CookingDetails />
-            <IngredientList />
-            <InstructionsList />
+            <main>
+                <CookingDetails />
+                <IngredientList />
+                <InstructionsList />
+            </main>
         </>
     );
 }

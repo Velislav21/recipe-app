@@ -1,6 +1,6 @@
 import styles from "./CategoriesList.module.css";
-import { recipeCategory } from "../../types/recipeCategory";
-import { Link } from "react-router";
+import { recipeCategory } from "../../../types/recipeCategory";
+import Category from "./Category";
 
 const categories: recipeCategory[] = [
     {
@@ -40,7 +40,7 @@ export default function CategoriesList() {
         <section className={styles["category-section"]}>
             <h1>Categories</h1>
 
-            <div className={styles["categories-container"]}>
+            {/* <div className={styles["categories-container"]}>
                 {categories.map((category) => (
                     <Link to="#" key={category.id} className={styles["category"]}>
                             <span className={styles["icon"]}>
@@ -48,6 +48,11 @@ export default function CategoriesList() {
                             </span>
                             <span className={styles["category"]}>{category.category}</span>
                     </Link>
+                ))}
+            // </div> */}
+            <div className={styles["categories-container"]}>
+                {categories.map((category) => (
+                    <Category key={category.id} {...category} />
                 ))}
             </div>
         </section>
