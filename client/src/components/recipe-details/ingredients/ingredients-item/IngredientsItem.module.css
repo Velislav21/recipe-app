@@ -1,0 +1,11 @@
+.ingredients-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f4faff;
+    border-radius: 1rem;
+    padding: 1.2em 1.5em;
+    margin: 0 0.5em 0.7em 0.5em;
+    font-size: 1.15rem;
+    color: #222;
+  }
