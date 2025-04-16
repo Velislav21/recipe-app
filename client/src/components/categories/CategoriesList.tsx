@@ -1,5 +1,6 @@
-import styles from "./Categories.module.css";
+import styles from "./CategoriesList.module.css";
 import { recipeCategory } from "../../types/recipeCategory";
+import { Link } from "react-router";
 
 const categories: recipeCategory[] = [
     {
@@ -34,20 +35,21 @@ const categories: recipeCategory[] = [
     },
 ];
 
-export default function Categories() {
+export default function CategoriesList() {
     return (
         <section className={styles["category-section"]}>
             <h1>Categories</h1>
 
             <div className={styles["categories-container"]}>
                 {categories.map((category) => (
-                    <button key={category.id} className={styles["category"]}>
-                        <span className={styles["icon"]}>{category.icon}</span>
-                        <span>{category.category}</span>
-                    </button>
+                    <Link to="#" key={category.id} className={styles["category"]}>
+                            <span className={styles["icon"]}>
+                                {category.icon}
+                            </span>
+                            <span className={styles["category"]}>{category.category}</span>
+                    </Link>
                 ))}
             </div>
-
         </section>
     );
 }

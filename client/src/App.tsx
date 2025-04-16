@@ -3,6 +3,7 @@ import Footer from "./components/footer/Footer";
 import RecipeDetails from "./components/recipe-details/RecipeDetails";
 
 import { Routes, Route } from "react-router";
+import CategoryPage from "./components/categories/category-specific-page/CategoryPage";
 
 function App() {
     return (
@@ -10,7 +11,8 @@ function App() {
             <main>
                 <Routes>
                     <Route path="/" Component={Home}/>
-                    <Route path="/recipe/:id" Component={RecipeDetails}/>
+                    <Route path="/recipe/:recipeId" Component={RecipeDetails}/>
+                    <Route path="/category/:category" Component={CategoryPage} />
                 </Routes>
             </main>
             <Footer />

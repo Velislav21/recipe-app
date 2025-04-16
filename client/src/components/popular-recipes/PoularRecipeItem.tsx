@@ -1,9 +1,10 @@
+import { Link } from "react-router";
 import styles from "./PopularRecipeItem.module.css";
 import { Clock, Star } from "lucide-react";
 
 export default function PopularRecipeItem() {
     return (
-        <div className={styles["recipe-container"]}>
+        <Link to="#" className={styles["recipe-container"]}>
             <div className={styles["img-container"]}>
                 <img
                     src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
@@ -21,6 +22,6 @@ export default function PopularRecipeItem() {
                     <span>4.9</span>
                 </p>
             </div>
-        </div>
+        </Link>
     );
 }
