@@ -1,17 +1,15 @@
-import SiteHeader from "./components/site-header/SiteHeader";
-import FeaturedRecipes from "./components/featured-recipes/FeaturedRecipes";
-import Categories from "./components/categories/Categories";
-import PopularRecipes from "./components/popular-recipes/PopularRecipes";
 import Footer from "./components/footer/Footer";
+import Home from "./components/home/Home";
+
+import { Routes, Route } from "react-router";
 
 function App() {
     return (
         <>
-            <SiteHeader />
             <main>
-                <FeaturedRecipes />
-                <Categories />
-                <PopularRecipes />
+                <Routes>
+                    <Route path="/" Component={Home}/>
+                </Routes>
             </main>
             <Footer />
         </>

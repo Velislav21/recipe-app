@@ -1,8 +1,8 @@
 import { SearchIcon } from "lucide-react";
 
-import styles from "./SiteHeader.module.css";
+import styles from "./SearchBar.module.css";
 
-export default function SiteHeader() {
+export default function SearchBar() {
     return (
         <header className={styles["site-header"]}>
             <h1 className={styles["text"]}>Tasty</h1>
