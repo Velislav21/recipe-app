@@ -2,9 +2,11 @@
     padding: 1em;
     background-color: #fff;
 }
-
-.similar-recipes-container {
+.similar-recipes-section {
     padding: 1em 1.5em;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+}
+.similar-recipes-container {
+    display:flex; 
+    flex-wrap: wrap;
+    gap: 1.5em;
 }
