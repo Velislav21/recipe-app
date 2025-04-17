@@ -1,37 +1,54 @@
-import styles from "./CategoriesList.module.css";
-import { recipeCategory } from "../../../types/recipeCategory";
 import Category from "./Category";
+import { recipeCategory } from "../../../types/recipeCategory";
+import styles from "./CategoriesList.module.css";
+
+import { v4 as uuidv4 } from "uuid";
 
 const categories: recipeCategory[] = [
     {
-        id: 1,
+        id: uuidv4(),
         category: "Breakfast",
         icon: "🍳",
     },
     {
-        id: 2,
+        id: uuidv4(),
         category: "Lunch",
         icon: "🥪",
     },
     {
-        id: 3,
+        id: uuidv4(),
         category: "Dinner",
         icon: "🍝",
     },
     {
-        id: 4,
-        category: "Dessert",
-        icon: "🧁",
+        id: uuidv4(),
+        category: "Salad",
+        icon: "🥗",
     },
     {
-        id: 5,
+        id: uuidv4(),
+        category: "Soup",
+        icon: "🍜",
+    },
+    {
+        id: uuidv4(),
+        category: "Bread",
+        icon: "🍞",
+    },
+    {
+        id: uuidv4(),
+        category: "Snacks",
+        icon: "🍿",
+    },
+    {
+        id: uuidv4(),
         category: "Drinks",
         icon: "🍹",
     },
     {
-        id: 6,
-        category: "Snacks",
-        icon: "🍿",
+        id: uuidv4(),
+        category: "Dessert",
+        icon: "🧁",
     },
 ];
 
@@ -40,16 +57,6 @@ export default function CategoriesList() {
         <section className={styles["category-section"]}>
             <h1>Categories</h1>
 
-            {/* <div className={styles["categories-container"]}>
-                {categories.map((category) => (
-                    <Link to="#" key={category.id} className={styles["category"]}>
-                            <span className={styles["icon"]}>
-                                {category.icon}
-                            </span>
-                            <span className={styles["category"]}>{category.category}</span>
-                    </Link>
-                ))}
-            // </div> */}
             <div className={styles["categories-container"]}>
                 {categories.map((category) => (
                     <Category key={category.id} {...category} />
