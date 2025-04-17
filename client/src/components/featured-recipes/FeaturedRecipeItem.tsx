@@ -2,7 +2,7 @@ import { Link } from "react-router";
 import styles from "./FeaturedRecipeItem.module.css";
 import { Clock, UsersIcon } from "lucide-react";
 
-export default function FeaturedRecipesItem() {
+export default function FeaturedRecipeItem() {
     return (
         <Link to="#" className={styles["featured-recipe-item"]}>
             <img

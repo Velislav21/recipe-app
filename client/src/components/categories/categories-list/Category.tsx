@@ -5,7 +5,10 @@ import { recipeCategory } from "../../../types/recipeCategory";
 
 export default function Category({ category, icon }: recipeCategory) {
     return (
-        <Link to="#" className={styles["category"]}>
+        <Link
+            to={`/category/${category.toLowerCase()}`}
+            className={styles["category"]}
+        >
             <span className={styles["icon"]}>{icon}</span>
             <span className={styles["category"]}>{category}</span>
         </Link>
