@@ -1,24 +1,31 @@
 import { Link } from "react-router";
 import styles from "./FeaturedRecipeItem.module.css";
 import { Clock, UsersIcon } from "lucide-react";
+import { Recipe } from "../../types/recipes";
 
-export default function FeaturedRecipeItem() {
+export default function FeaturedRecipeItem({
+    id,
+    image,
+    readyInMinutes,
+    servings,
+    title,
+}: Recipe) {
     return (
-        <Link to="#" className={styles["featured-recipe-item"]}>
-            <img
-                src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+        <Link to={`/recipe/${id}`} className={styles["featured-recipe-item"]}>
+            <img 
+                src={image} 
                 alt=""
             />
             <div className={styles["recipe-details"]}>
-                <h3>Some pasta on the picture</h3>
+                <h3>{title}</h3>
                 <div>
                     <p>
                         <Clock size={16} />
-                        <span>25 min</span>
+                        <span>{readyInMinutes} min</span>
                     </p>
                     <p>
                         <UsersIcon size={16} />
-                        <span>2 servings</span>
+                        <span>{servings} servings</span>
                     </p>
                 </div>
             </div>
