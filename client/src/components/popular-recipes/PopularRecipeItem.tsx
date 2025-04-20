@@ -1,25 +1,26 @@
 import { Link } from "react-router";
 import styles from "./PopularRecipeItem.module.css";
-import { Clock, Star } from "lucide-react";
+import { Clock, UsersIcon } from "lucide-react";
+import { Recipe } from "../../types/recipes";
 
-export default function PopularRecipeItem() {
+export default function PopularRecipeItem({id, image, title, readyInMinutes, servings}: Recipe) {
     return (
-        <Link to="#" className={styles["recipe-container"]}>
+        <Link to={`/recipe/${id}`} className={styles["recipe-container"]}>
             <div className={styles["img-container"]}>
                 <img
-                    src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                    src={image}
                     alt=""
                 />
             </div>
             <div className={styles["recipe-details"]}>
-                <p className={styles["recipe-title"]}>Some Pasta</p>
+                <p className={styles["recipe-title"]}>{title}</p>
                 <p className={styles["prep-time"]}>
                     <Clock size={14} />
-                    <span>25 min</span>
+                    <span>{readyInMinutes} min</span>
                 </p>
                 <p className={styles["recipe-rating"]}>
-                    <Star size={14} fill="#facc15" color="#facc15" />
-                    <span>4.9</span>
+                    <UsersIcon size={14}/>
+                    <span>{servings}</span>
                 </p>
             </div>
         </Link>

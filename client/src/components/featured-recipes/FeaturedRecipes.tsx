@@ -3,22 +3,21 @@ import FeaturedRecipeItem from "./FeaturedRecipeItem";
 
 import styles from "./FeaturedRecipes.module.css";
 
-type FeaturedRecipesProps = {
+type FeaturedRecipes = {
     featuredRecipes: Recipe[];
 };
 
-export default function FeaturedRecipes({
-    featuredRecipes,
-}: FeaturedRecipesProps) {
+export default function FeaturedRecipes({ featuredRecipes }: FeaturedRecipes) {
     return (
         <section className={styles["featured-recipes-section"]}>
             <h1>Featured Recipes</h1>
             <div className={styles["featured-recipes-container"]}>
-
-                {featuredRecipes.map((recipe) => (
-                    <FeaturedRecipeItem key={recipe.id} {...recipe}/>
-                ))}
-
+                {!featuredRecipes ? (
+                    <div>Loading...</div>
+                )
+                : 
+                featuredRecipes.map((recipe) => <FeaturedRecipeItem key={recipe.id} {...recipe} />)
+            }
             </div>
         </section>
     );

@@ -15,7 +15,6 @@ export default function Home() {
             .get("http://localhost:8080")
             .then((response) => setRecipes(response.data));
     }, []);
-    console.log(recipes);
     return (
         <>
             <HomeHeader />
@@ -24,11 +23,9 @@ export default function Home() {
                     <div>Loading...</div>
                 ) : (
                     <>
-                        <FeaturedRecipes
-                            featuredRecipes={recipes.featuredRecipes}
-                        />
+                        <FeaturedRecipes featuredRecipes={recipes.featuredRecipes}/>
                         <CategoriesList />
-                        <PopularRecipes />
+                        <PopularRecipes popularRecipes={recipes.popularRecipes}/>
                     </>
                 )}
             </main>
