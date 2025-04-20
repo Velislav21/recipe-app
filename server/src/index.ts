@@ -1,7 +1,10 @@
-import express from "express";
+import express, { Request, Response } from "express";
 import cors from "cors";
-import axios from "axios";
 import "dotenv/config";
+
+import axiosClient from "./axiosInstance.js";
+import { AxiosError } from "axios";
+
 const app = express();
 
 app.use(
@@ -9,18 +12,15 @@ app.use(
         origin: "*",
         credentials: true,
     })
-);  
+);
 
 app.use(express.json());
 
-app.get("/", (req, res) => {
-    axios
-        .get("https://ss-server-731733900032.europe-west4.run.app/shoes")
-        .then((result) => {
-            console.log(result.data);
-        })
-        .finally(() => console.log("request finished"))
-    res.send({ message: "works" });
+app.get("/", async (req: Request, res: Response) => {
+    try {
+        const result = await axiosClient.get("/recipes/random/?number=7")
+        res.status(200).json(result.data)
+    } catch (err) {}
 });
 
 app.get("/recipe/:recipeId", (req, res) => {});
