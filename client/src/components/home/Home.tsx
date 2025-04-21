@@ -4,15 +4,15 @@ import FeaturedRecipes from "../featured-recipes/FeaturedRecipes";
 import PopularRecipes from "../popular-recipes/PopularRecipes";
 import HomeHeader from "./home-header/HomeHeader";
 
-import axios from "axios";
+import axiosClient from "../../axiosInstance";
 
 import { Recipes } from "../../types/recipes";
 export default function Home() {
     
     const [recipes, setRecipes] = useState<Recipes>();
     useEffect(() => {
-        axios
-            .get("http://localhost:8080/recipes")
+        axiosClient
+            .get("/recipes")
             .then((response) => setRecipes(response.data));
     }, []);
     return (
