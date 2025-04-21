@@ -12,7 +12,7 @@ export default function Home() {
     const [recipes, setRecipes] = useState<Recipes>();
     useEffect(() => {
         axios
-            .get("http://localhost:8080")
+            .get("http://localhost:8080/recipes")
             .then((response) => setRecipes(response.data));
     }, []);
     return (

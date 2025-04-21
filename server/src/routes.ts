@@ -3,7 +3,7 @@ import recipeController from "./controllers/recipeController.js";
 
 const routes = Router();
 
-routes.use("/recipe", recipeController);
+routes.use("/recipes", recipeController);
 
 export default routes;
 
