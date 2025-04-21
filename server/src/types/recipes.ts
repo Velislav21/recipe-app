@@ -39,15 +39,3 @@ export type RecipeDetails = {
     analyzedInstructions: AnalyzedInstructions[];
     extendedIngredients: ExtendedIngredients[]
 };
-// steps: [
-//     {
-//         number: number;
-//         step: string;
-//         ingredients: [
-//             id: number,
-//             name: string,
-//             localizedName: string,
-//             image: string
-//         ];
-//     }
-// ];
