@@ -7,27 +7,38 @@ import HomeHeader from "./home-header/HomeHeader";
 import axiosClient from "../../axiosInstance";
 
 import { Recipes } from "../../types/recipes";
+import { useHomeRecipes } from "../../hooks/recipes/useHomeRecipes";
 export default function Home() {
-    
-    const [recipes, setRecipes] = useState<Recipes>();
-    useEffect(() => {
-        axiosClient
-            .get("/recipes")
-            .then((response) => setRecipes(response.data));
-    }, []);
+    const { data, isLoading, isError, error } = useHomeRecipes();
+    console.log(data?.featuredRecipes);
+    console.log(data?.popularRecipes);
+    // const [recipes, setRecipes] = useState<Recipes>();
+    // useEffect(() => {
+    //     axiosClient
+    //         .get("/recipes")
+    //         .then((response) => setRecipes(response.data));
+    // }, []);
     return (
         <>
             <HomeHeader />
             <main>
-                {!recipes ? (
-                    <div>Loading...</div>
-                ) : (
-                    <>
-                        <FeaturedRecipes featuredRecipes={recipes.featuredRecipes}/>
-                        <CategoriesList />
-                        <PopularRecipes popularRecipes={recipes.popularRecipes}/>
-                    </>
-                )}
+                {
+                    isLoading ? (
+                        <div>Loading...</div> 
+                    ) : isError ? ( 
+                        <div>Error loading recipes: {error?.message}</div>
+                    ) : data ? (
+                        <>
+                            <FeaturedRecipes
+                                featuredRecipes={data.featuredRecipes}
+                            />
+                            <CategoriesList />
+                            <PopularRecipes
+                                popularRecipes={data.popularRecipes}
+                            />
+                        </>
+                    ) : null 
+                }
             </main>
         </>
     );
