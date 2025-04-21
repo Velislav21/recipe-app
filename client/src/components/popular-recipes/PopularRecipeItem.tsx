@@ -2,6 +2,7 @@ import { Link } from "react-router";
 import styles from "./PopularRecipeItem.module.css";
 import { Clock, UsersIcon } from "lucide-react";
 import { Recipe } from "../../types/recipes";
+import { fallbackRecipeImage } from "../../utils/fallbackRecipeImage";
 
 export default function PopularRecipeItem({id, image, title, readyInMinutes, servings}: Recipe) {
     return (
@@ -9,7 +10,8 @@ export default function PopularRecipeItem({id, image, title, readyInMinutes, ser
             <div className={styles["img-container"]}>
                 <img
                     src={image}
-                    alt=""
+                    alt="The image is not available"
+                    onError={fallbackRecipeImage}
                 />
             </div>
             <div className={styles["recipe-details"]}>
