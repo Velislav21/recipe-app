@@ -15,11 +15,11 @@ export default function CategoryPage() {
                 <section className={styles["similar-recipes-section"]}>
                     <h1>Category based recipes</h1>
                     <div className={styles["similar-recipes-container"]}>
+                        {/* <FeaturedRecipesItem />
                         <FeaturedRecipesItem />
                         <FeaturedRecipesItem />
                         <FeaturedRecipesItem />
-                        <FeaturedRecipesItem />
-                        <FeaturedRecipesItem />
+                        <FeaturedRecipesItem /> */}
                     </div>
                 </section>
             </main>

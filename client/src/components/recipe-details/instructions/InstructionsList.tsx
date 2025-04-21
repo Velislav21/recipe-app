@@ -1,17 +1,24 @@
+import { AnalyzedInstructions } from "../../../types/recipes";
 import InstructionsItem from "./InstructionsItem";
 import styles from "./InstructionsList.module.css";
 
-export function InstructionsList() {
+type InstructionsListProps = {
+    instructions: AnalyzedInstructions[];
+};
+
+export function InstructionsList({ instructions }: InstructionsListProps) {
+    console.log(instructions);
     return (
         <div className={styles["instructions-list"]}>
-            <h2 className={styles["instructions-list__title"]}>Instructions</h2>
-            <ol className={styles["instructions-list__steps"]}>
-                <InstructionsItem />
-                <InstructionsItem />
-                <InstructionsItem />
-                <InstructionsItem />
-                <InstructionsItem />
-                <InstructionsItem />
+            <h2 className={styles["instructions-list-title"]}>Instructions</h2>
+            <ol className={styles["instructions-list-steps"]}>
+                {instructions[0].steps.map((step) => (
+                    <InstructionsItem
+                        key={step.number}
+                        number={step.number}
+                        instruction={step.step}
+                    />
+                ))}
             </ol>
         </div>
     );

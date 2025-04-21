@@ -3,32 +3,26 @@
     padding: 0 1em 1.5em;
 }
 
-.instructions-list__title {
+.instructions-list-title {
     font-size: 1.6rem;
     font-weight: 700;
     margin: 0 0 18px 16px;
 }
 
-.instructions-list__steps {
+.instructions-list-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
     list-style: none;
     margin: 0;
-    padding: 0 0 0 0;
+    padding: 0;
 }
-
-.instructions-list__steps li {
+.instructions-list-steps li {
     display: flex;
     align-items: center;
-    border-radius: 50px;
-    margin: 0 8px 16px 8px;
-    padding: 18px 24px 18px 0;
-    font-size: 1.15rem;
-    color: #222;
-    position: relative;
 }
 
-.instructions-list__steps li::before {
-    content: counter(step);
-    counter-increment: step;
+.instructions-list-steps li > span:first-of-type {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -40,8 +34,14 @@
     width: 40px;
     height: 40px;
     margin-right: 18px;
+    flex-shrink: 0;
+}
+.instructions-list__steps li > span:nth-of-type(2) {
+    flex: 1;
+    font-size: 1.15rem;
+    color: #222;
 }
 
-.instructions-list__steps {
+.instructions-list-steps {
     counter-reset: step;
 }

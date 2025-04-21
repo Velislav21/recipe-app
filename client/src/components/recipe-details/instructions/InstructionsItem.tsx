@@ -1,8 +1,16 @@
-export default function InstructionsItem() {
+type InstructionsItemProps = {
+    instruction: string;
+    number: number;
+};
+
+export default function InstructionsItem({
+    instruction,
+    number,
+}: InstructionsItemProps) {
     return (
         <li>
-            Bring a large pot of salted water to boil. Cook pasta according to
-            package instructions.
+            <span>{number}</span>
+            <span>{instruction}</span>
         </li>
     );
 }

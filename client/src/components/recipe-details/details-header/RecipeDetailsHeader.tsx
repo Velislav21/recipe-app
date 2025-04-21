@@ -4,30 +4,24 @@ import { Link } from "react-router";
 import { fallbackRecipeImage } from "../../../utils/fallbackRecipeImage";
 
 type RecipeHeaderProps = {
-    
-}
+    image: string;
+    title: string;
+};
 
-export default function RecipeHeader() {
+export default function RecipeHeader({ image, title }: RecipeHeaderProps) {
     return (
         <header className={styles["recipe-header"]}>
             <section className={styles["recipe-header-image-section"]}>
                 <img
                     className={styles["recipe-header-image"]}
-                    src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                    src={image}
                     onError={fallbackRecipeImage}
                 />
                 <Link to="/" className={styles["recipe-header-back-btn"]}>
                     <MoveLeft size={20} />
                 </Link>
                 <div className={styles["recipe-header-info"]}>
-                    <h1 className={styles["recipe-header-title"]}>
-                        Honey Glazed Salmon
-                    </h1>
-                    <div className={styles["recipe-header-author"]}>
-                        <span className={styles["recipe-header-author"]}>
-                            by Chef Alex
-                        </span>
-                    </div>
+                    <h1 className={styles["recipe-header-title"]}>{title}</h1>
                 </div>
             </section>
         </header>
