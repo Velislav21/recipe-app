@@ -1,0 +1,24 @@
+.instruction-item {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+}
+.instruction-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffedd5;
+    color: #f97316;
+    font-weight: 700;
+    font-size: 1.3rem;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+}
+.instruction-text {
+    display: block;
+    flex: 1;
+    font-size: 1.15rem;
+    color: #404040;
+}

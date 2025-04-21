@@ -8,7 +8,7 @@ type IngredientsListProps = {
 
 export default function IngredientList({ ingredients }: IngredientsListProps) {
     return (
-        <div className={styles["ingredients-list"]}>
+        <section className={styles["ingredients-list"]}>
             <h2 className={styles["ingredients-list-title"]}>Ingredients</h2>
             <ul className={styles["ingredients-list-items"]}>
                 {ingredients.map((ingredient) => (
@@ -19,6 +19,6 @@ export default function IngredientList({ ingredients }: IngredientsListProps) {
                     />
                 ))}
             </ul>
-        </div>
+        </section>
     );
 }

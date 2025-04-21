@@ -7,9 +7,8 @@ type InstructionsListProps = {
 };
 
 export function InstructionsList({ instructions }: InstructionsListProps) {
-    console.log(instructions);
     return (
-        <div className={styles["instructions-list"]}>
+        <section className={styles["instructions-list"]}>
             <h2 className={styles["instructions-list-title"]}>Instructions</h2>
             <ol className={styles["instructions-list-steps"]}>
                 {instructions[0].steps.map((step) => (
@@ -20,6 +19,6 @@ export function InstructionsList({ instructions }: InstructionsListProps) {
                     />
                 ))}
             </ol>
-        </div>
+        </section>
     );
 }
