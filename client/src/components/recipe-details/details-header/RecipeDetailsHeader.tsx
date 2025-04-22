@@ -5,7 +5,7 @@ import { fallbackRecipeImage } from "../../../utils/fallbackRecipeImage";
 
 type RecipeHeaderProps = {
     image: string;
-    title: string;
+    title?: string;
 };
 
 export default function RecipeHeader({ image, title }: RecipeHeaderProps) {

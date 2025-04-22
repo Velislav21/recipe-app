@@ -1,9 +1,9 @@
 import { Link } from "react-router";
 
 import styles from "./Category.module.css";
-import { recipeCategory } from "../../../types/recipeCategory";
+import { RecipeCategory } from "../../../types/recipes";
 
-export default function Category({ category, icon }: recipeCategory) {
+export default function Category({ category, icon }: RecipeCategory) {
     return (
         <Link
             to={`/category/${category.toLowerCase()}`}
