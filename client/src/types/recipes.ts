@@ -1,4 +1,4 @@
-export type recipeCategory = {
+export type RecipeCategory = {
     id: string;
     category: string;
     icon: string;
@@ -58,3 +58,10 @@ type recipeDetails = {
 };
 
 export type RecipeDetails = Recipe & recipeDetails;
+
+export type CategoryBasedRecipes = {
+    number: number;
+    offset: number;
+    results: RecipeDetails[];
+    totalResults: number;
+}

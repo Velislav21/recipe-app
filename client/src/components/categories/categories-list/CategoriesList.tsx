@@ -1,24 +1,15 @@
 import Category from "./Category";
-import { recipeCategory } from "../../../types/recipeCategory";
+
 import styles from "./CategoriesList.module.css";
 
 import { v4 as uuidv4 } from "uuid";
+import { RecipeCategory } from "../../../types/recipes";
 
-const categories: recipeCategory[] = [
+const categories: RecipeCategory[] = [
     {
         id: uuidv4(),
         category: "Breakfast",
         icon: "🍳",
-    },
-    {
-        id: uuidv4(),
-        category: "Lunch",
-        icon: "🥪",
-    },
-    {
-        id: uuidv4(),
-        category: "Dinner",
-        icon: "🍝",
     },
     {
         id: uuidv4(),
@@ -42,7 +33,7 @@ const categories: recipeCategory[] = [
     },
     {
         id: uuidv4(),
-        category: "Drinks",
+        category: "Drink",
         icon: "🍹",
     },
     {

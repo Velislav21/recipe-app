@@ -1,5 +1,5 @@
 import axiosClient from "../axiosInstance";
-import { RecipeDetails, Recipes } from "../types/recipes";
+import { CategoryBasedRecipes, RecipeDetails, Recipes } from "../types/recipes";
 
 export async function fetchHomeRecipes() {
     try {
@@ -18,3 +18,12 @@ export async function fetchRecipeDetails(recipeId: string) {
         console.log(err);
     };
 };
+
+export async function fetchRecipesByCategory(category: string) {
+    try {
+        const response = await axiosClient.get<CategoryBasedRecipes>(`/recipes/category/${category}`);
+        return response.data;
+    } catch (err) {
+        console.log(err);
+    };
+}
