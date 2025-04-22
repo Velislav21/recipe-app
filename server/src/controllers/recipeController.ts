@@ -49,9 +49,9 @@ recipeController.get("/details/:recipeId", async (req: Request, res: Response) =
 
 recipeController.get("/category/:category", async (req: Request, res: Response) => {
 
-    const category = req.params.recipeId;
+    const category = req.params.category;
     try {
-        const response = await axiosClient.get<CategoryBasedRecipes>(`/recipes/complexSearch?type=${category}&addRecipeInformation=true`);
+        const response = await axiosClient.get<CategoryBasedRecipes>(`/recipes/complexSearch?type=${category}&addRecipeInformation=true&number=12`);
         res.status(200).json(response.data);
     } catch (error) {
         console.log(error) //!TODO fix this
