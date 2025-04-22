@@ -28,7 +28,7 @@ const categories: RecipeCategory[] = [
     },
     {
         id: uuidv4(),
-        category: "Snacks",
+        category: "Snack",
         icon: "🍿",
     },
     {

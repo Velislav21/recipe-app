@@ -5,6 +5,7 @@ import RecipeHeader from "../../recipe-details/details-header/RecipeDetailsHeade
 import SearchBar from "../../search-bar/SearchBar";
 
 import styles from "./CategoryPage.module.css";
+import FeaturedRecipeItem from "../../featured-recipes/FeaturedRecipeItem";
 
 export default function CategoryPage() {
     const { category } = useParams();
@@ -26,8 +27,19 @@ export default function CategoryPage() {
                         </div>
                         <section className={styles["similar-recipes-section"]}>
                             <h1>Category based recipes</h1>
-                            <div className={styles["similar-recipes-container"]}>
-
+                            <div
+                                className={styles["similar-recipes-container"]}
+                            >
+                                {data.results.map((recipe) => (
+                                    <FeaturedRecipeItem
+                                        key={recipe.id}
+                                        id={recipe.id}
+                                        image={recipe.image}
+                                        readyInMinutes={recipe.readyInMinutes}
+                                        servings={recipe.servings}
+                                        title={recipe.title}
+                                    />
+                                ))}
                             </div>
                         </section>
                     </main>

@@ -1,6 +1,6 @@
 import { MoveLeft } from "lucide-react";
 import styles from "./RecipeDetailsHeader.module.css";
-import { Link } from "react-router";
+import { useNavigate } from "react-router";
 import { fallbackRecipeImage } from "../../../utils/fallbackRecipeImage";
 
 type RecipeHeaderProps = {
@@ -9,6 +9,12 @@ type RecipeHeaderProps = {
 };
 
 export default function RecipeHeader({ image, title }: RecipeHeaderProps) {
+    const navigate = useNavigate();
+
+    function goToPreviousPage() {
+        navigate(-1);
+    }
+
     return (
         <header className={styles["recipe-header"]}>
             <section className={styles["recipe-header-image-section"]}>
@@ -17,9 +23,12 @@ export default function RecipeHeader({ image, title }: RecipeHeaderProps) {
                     src={image}
                     onError={fallbackRecipeImage}
                 />
-                <Link to="/" className={styles["recipe-header-back-btn"]}>
+                <button
+                    className={styles["recipe-header-back-btn"]}
+                    onClick={goToPreviousPage}
+                >
                     <MoveLeft size={20} />
-                </Link>
+                </button>
                 <div className={styles["recipe-header-info"]}>
                     <h1 className={styles["recipe-header-title"]}>{title}</h1>
                 </div>
