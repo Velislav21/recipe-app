@@ -1,7 +1,12 @@
-import { ChefHat, Clock, UserIcon } from "lucide-react";
+import { Clock, UserIcon } from "lucide-react";
 import styles from "./CookingDetails.module.css"
 
-export default function CookingDetails() {
+type CookingDetailsProps = {
+    readyInMinutes: number;
+    servings: number;
+}
+
+export default function CookingDetails({readyInMinutes, servings}: CookingDetailsProps) {
     return (
         <section className={styles["recipe-header-description"]}>
             <p className={styles["recipe-description"]}>
@@ -15,7 +20,7 @@ export default function CookingDetails() {
                     </span>
                     <div>
                         <div className={styles["recipe-header-stat-value"]}>
-                            20 min
+                            {readyInMinutes} min
                         </div>
                         <div className={styles["recipe-header-stat-label"]}>
                             Cook Time
@@ -28,23 +33,10 @@ export default function CookingDetails() {
                     </span>
                     <div>
                         <div className={styles["recipe-header-stat-value"]}>
-                            2
+                            {servings}
                         </div>
                         <div className={styles["recipe-header-stat-label"]}>
                             Servings
-                        </div>
-                    </div>
-                </div>
-                <div className={styles["recipe-header-stat"]}>
-                    <span className={styles["recipe-header-stat-icon"]}>
-                        <ChefHat />
-                    </span>
-                    <div>
-                        <div className={styles["recipe-header-stat-value"]}>
-                            Medium
-                        </div>
-                        <div className={styles["recipe-header-stat-label"]}>
-                            Difficulty
                         </div>
                     </div>
                 </div>

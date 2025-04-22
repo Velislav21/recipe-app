@@ -21,7 +21,7 @@ export default function RecipeDetails() {
                         title={data.title}
                     />
                     <main>
-                        <CookingDetails />
+                        <CookingDetails readyInMinutes={data.readyInMinutes} servings={data.servings}/>
                         <IngredientList ingredients={data.extendedIngredients} />
                         <InstructionsList instructions={data.analyzedInstructions}/>
                     </main>
