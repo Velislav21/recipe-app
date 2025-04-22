@@ -1,23 +1,19 @@
-export type Recipes = {
-    recipes: [
-        {
-            id: number;
-            image: string;
-            title: string;
-            readyInMinutes: number;
-            servings: number;
-        }
-    ];
+type Recipe = {
+    id: number;
+    image: string;
+    title: string;
+    readyInMinutes: number;
+    servings: number;
 };
-
+export type Recipes = {
+    recipes: Recipe[];
+};
 type Step = {
     step: string;
-}
-
+};
 type AnalyzedInstructions = {
     steps: Step[];
-}
-
+};
 type ExtendedIngredients = {
     id: number;
     name: string;
@@ -29,7 +25,6 @@ type ExtendedIngredients = {
         };
     };
 };
-
 export type RecipeDetails = {
     id: number;
     image: string;
@@ -37,5 +32,5 @@ export type RecipeDetails = {
     readyInMinutes: number;
     servings: number;
     analyzedInstructions: AnalyzedInstructions[];
-    extendedIngredients: ExtendedIngredients[]
+    extendedIngredients: ExtendedIngredients[];
 };
