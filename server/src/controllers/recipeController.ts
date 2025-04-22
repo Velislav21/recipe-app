@@ -2,7 +2,7 @@ import { Request, Response, Router } from "express";
 
 import axiosClient from "../axiosInstance.js";
 
-import { Recipes, RecipeDetails } from "../types/recipes.js";
+import { Recipes, RecipeDetails, CategoryBasedRecipes } from "../types/recipes.js";
 
 
 const recipeController = Router();
@@ -51,8 +51,7 @@ recipeController.get("/category/:category", async (req: Request, res: Response) 
 
     const category = req.params.recipeId;
     try {
-        const response = await axiosClient.get<RecipeDetails[]>(`/recipes/complexSearch?type=${category}&addRecipeInformation=true`);
-        console.log(response.data);
+        const response = await axiosClient.get<CategoryBasedRecipes>(`/recipes/complexSearch?type=${category}&addRecipeInformation=true`);
         res.status(200).json(response.data);
     } catch (error) {
         console.log(error) //!TODO fix this

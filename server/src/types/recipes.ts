@@ -25,6 +25,14 @@ type ExtendedIngredients = {
         };
     };
 };
+
+export type CategoryBasedRecipes = {
+    number: number;
+    offset: number;
+    results: RecipeDetails[];
+    totalResults: number;
+}
+
 export type RecipeDetails = {
     id: number;
     image: string;
