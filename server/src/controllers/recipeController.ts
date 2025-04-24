@@ -50,8 +50,14 @@ recipeController.get("/details/:recipeId", async (req: Request, res: Response) =
 recipeController.get("/category/:category", async (req: Request, res: Response) => {
 
     const category = req.params.category;
+
+    const offset = parseInt(req.query.offset as string || '0', 10);
+    const number = parseInt(req.query.number as string || '12', 10);
+
     try {
-        const response = await axiosClient.get<CategoryBasedRecipes>(`/recipes/complexSearch?type=${category}&addRecipeInformation=true&number=12`);
+        const response =
+            await axiosClient.get<CategoryBasedRecipes>
+            (`/recipes/complexSearch?type=${category}&addRecipeInformation=true&offset=${offset}&number=${number}`);
         res.status(200).json(response.data);
     } catch (error) {
         console.log(error) //!TODO fix this
