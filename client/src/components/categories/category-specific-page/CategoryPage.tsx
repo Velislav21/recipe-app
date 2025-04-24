@@ -1,16 +1,24 @@
 import { useParams } from "react-router";
 import { useRecipesByCategory } from "../../../hooks/recipes/useRecipesByCategory";
-import FeaturedRecipesItem from "../../featured-recipes/FeaturedRecipeItem";
+import FeaturedRecipeItem from "../../featured-recipes/FeaturedRecipeItem";
 import RecipeHeader from "../../recipe-details/details-header/RecipeDetailsHeader";
-import SearchBar from "../../search-bar/SearchBar";
 
 import styles from "./CategoryPage.module.css";
-import FeaturedRecipeItem from "../../featured-recipes/FeaturedRecipeItem";
+import LoadMoreBtn from "../../ui/load-more-btn/LoadMoreBtn";
 
 export default function CategoryPage() {
-    const { category } = useParams();
+    const { category } = useParams<{ category: string }>();
+    const {
+        data,
+        isError,
+        error,
+        isLoading,
+        fetchNextPage,
+        hasNextPage,
+        isFetchingNextPage,
+    } = useRecipesByCategory(category);
 
-    const { data, isError, error, isLoading } = useRecipesByCategory(category);
+    const allRecipes = data?.pages.flatMap((page) => page?.results || []) || [];
 
     return (
         <>
@@ -20,17 +28,14 @@ export default function CategoryPage() {
                 <div>Error loading recipes: {error.message}</div>
             ) : data ? (
                 <>
-                    <RecipeHeader image={data.results[0].image} />
+                    <RecipeHeader image={allRecipes[0].image} />
                     <main>
-                        <div className={styles["search-bar-container"]}>
-                            <SearchBar />
-                        </div>
                         <section className={styles["similar-recipes-section"]}>
                             <h1>Category based recipes</h1>
                             <div
                                 className={styles["similar-recipes-container"]}
                             >
-                                {data.results.map((recipe) => (
+                                {allRecipes.map((recipe) => (
                                     <FeaturedRecipeItem
                                         key={recipe.id}
                                         id={recipe.id}
@@ -41,6 +46,11 @@ export default function CategoryPage() {
                                     />
                                 ))}
                             </div>
+                            <LoadMoreBtn
+                                fetchNextPage={fetchNextPage}
+                                hasNextPage={hasNextPage}
+                                isFetchingNextPage={isFetchingNextPage}
+                            />
                         </section>
                     </main>
                 </>

@@ -1,16 +1,27 @@
-import { useQuery } from "@tanstack/react-query";
+import { useInfiniteQuery } from "@tanstack/react-query";
 import { fetchRecipesByCategory } from "../../utils/http";
 
 export function useRecipesByCategory(category: string | undefined) {
-    return useQuery({
-        queryKey: ["details", category],
-        queryFn: () => {
+    return useInfiniteQuery({
+        queryKey: ["recipesByCategory", category],
+
+        queryFn: async ({ pageParam = 0 }) => {
             if (!category) {
-                return;
+                return null;
             }
-            return fetchRecipesByCategory(category);
+            return fetchRecipesByCategory(category, pageParam, 12);
+        },
+
+        initialPageParam: 0,
+
+        getNextPageParam: (lastPage) => {
+            if (!lastPage) return undefined;
+
+            if (lastPage.offset + lastPage.number >= lastPage.totalResults) return undefined;
+
+            return lastPage.offset + lastPage.number;
         },
 
         enabled: !!category,
     });
-} 
+}

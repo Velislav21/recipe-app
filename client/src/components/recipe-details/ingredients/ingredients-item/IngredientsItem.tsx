@@ -19,7 +19,7 @@ export default function IngredientsItem({
         <li className={styles["ingredients-item"]}>
             <span>{name}</span>
             <span>
-                {measures.metric.amount} {measures.metric.unitLong}
+                {Math.floor(measures.metric.amount)} {measures.metric.unitLong}
             </span>
         </li>
     );
