@@ -1,7 +1,7 @@
 import { FetchNextPageOptions } from "@tanstack/react-query";
 import styles from "./LoadMoreBtn.module.css"
 
-type LoadMoreBtnProps = {
+export type LoadMoreBtnProps = {
     fetchNextPage: (options?: FetchNextPageOptions) => {},
     hasNextPage: boolean,
     isFetchingNextPage: boolean,

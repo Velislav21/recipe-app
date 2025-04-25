@@ -19,9 +19,17 @@ export async function fetchRecipeDetails(recipeId: string) {
     };
 };
 
-export async function fetchRecipesByCategory(category: string) {
+export async function fetchRecipesByCategory(category: string, offset = 0, number = 12) {
+
+    const config = {
+        params: {
+            offset,
+            number
+        }
+    }
+
     try {
-        const response = await axiosClient.get<CategoryBasedRecipes>(`/recipes/category/${category}`);
+        const response = await axiosClient.get<CategoryBasedRecipes>(`/recipes/category/${category}`, config);
         return response.data;
     } catch (err) {
         console.log(err);
