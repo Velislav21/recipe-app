@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import CategoriesList from "../categories/categories-list/CategoriesList";
 import FeaturedRecipes from "../featured-recipes/FeaturedRecipes";
 import PopularRecipes from "../popular-recipes/PopularRecipes";
@@ -7,11 +9,16 @@ import { useHomeRecipes } from "../../hooks/recipes/useHomeRecipes";
 
 export default function Home() {
 
-    const { data, isLoading, isError, error } = useHomeRecipes();
+    const [searchTerm, setSearchTerm] = useState("");
+    const { data, isLoading, isError, error } = useHomeRecipes(searchTerm);
+
+    const handleSearchSubmit = (newSearchTerm: string) => {
+        setSearchTerm(newSearchTerm);
+      };
 
     return (
         <>
-            <HomeHeader />
+            <HomeHeader onSearchSubmit={handleSearchSubmit}/> {/* Definetly not the best solution */}
             <main>
                 {
                     isLoading ? (
