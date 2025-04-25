@@ -9,10 +9,15 @@ const recipeController = Router();
 
 recipeController.get("/", async (req: Request, res: Response) => {
 
+    const searchTerm = req.query.searchTerm as string;
+    let url = "/recipes/random/?number=7";
+
+    if (searchTerm) {
+        url += `&include-tags=${searchTerm}`
+    }
+
     try {
-        const response = await axiosClient.get<Recipes>(
-            "/recipes/random/?number=7"
-        );
+        const response = await axiosClient.get<Recipes>(url);
         res.status(200).json({
             featuredRecipes: response.data.recipes.splice(0, 4),
             popularRecipes: response.data.recipes,
