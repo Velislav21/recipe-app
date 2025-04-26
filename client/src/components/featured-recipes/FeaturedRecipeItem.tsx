@@ -1,8 +1,11 @@
-import { Link } from "react-router";
-import styles from "./FeaturedRecipeItem.module.css";
 import { Clock, UsersIcon } from "lucide-react";
+import { Link } from "react-router";
+
 import { Recipe } from "../../types/recipes";
+import styles from "./FeaturedRecipeItem.module.css";
+
 import { fallbackRecipeImage } from "../../utils/fallbackRecipeImage";
+import { calculateTime } from "../../utils/calculateTime";
 
 export default function FeaturedRecipeItem({
     id,
@@ -23,7 +26,7 @@ export default function FeaturedRecipeItem({
                 <div>
                     <p>
                         <Clock size={16} />
-                        <span>{readyInMinutes} min</span>
+                        <span>{calculateTime(readyInMinutes)}</span>
                     </p>
                     <p>
                         <UsersIcon size={16} />

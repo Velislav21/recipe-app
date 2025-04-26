@@ -1,5 +1,6 @@
 import { Clock, UserIcon } from "lucide-react";
 import styles from "./CookingDetails.module.css"
+import { calculateTime } from "../../../utils/calculateTime";
 
 type CookingDetailsProps = {
     readyInMinutes: number;
@@ -9,10 +10,6 @@ type CookingDetailsProps = {
 export default function CookingDetails({readyInMinutes, servings}: CookingDetailsProps) {
     return (
         <section className={styles["recipe-header-description"]}>
-            <p className={styles["recipe-description"]}>
-                A simple yet elegant salmon dish with a sweet honey glaze.
-                Perfect for a quick weeknight dinner that feels fancy.
-            </p>
             <div className={styles["recipe-header-stats"]}>
                 <div className={styles["recipe-header-stat"]}>
                     <span className={styles["recipe-header-stat-icon"]}>
@@ -20,7 +17,7 @@ export default function CookingDetails({readyInMinutes, servings}: CookingDetail
                     </span>
                     <div>
                         <div className={styles["recipe-header-stat-value"]}>
-                            {readyInMinutes} min
+                            {calculateTime(readyInMinutes)}
                         </div>
                         <div className={styles["recipe-header-stat-label"]}>
                             Cook Time
