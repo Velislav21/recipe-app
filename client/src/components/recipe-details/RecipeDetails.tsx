@@ -17,7 +17,7 @@ export default function RecipeDetails() {
                     <SkeletonLoader />
                 ) : isError ? (
                     <ErrorMessage>
-                        Error loading recipes: {error.message}
+                        Error loading recipe: {error.message}
                     </ErrorMessage>
                 ) : data ? (
                     <>

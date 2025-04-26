@@ -10,3 +10,9 @@
     font-weight: bold;
     color: rgb(236, 78, 78);
 }
+
+p.err-msg > a {
+    margin-left: 0.5em;
+    color: inherit;
+    text-decoration: underline;
+}
