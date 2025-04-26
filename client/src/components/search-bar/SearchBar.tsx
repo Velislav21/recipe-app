@@ -32,4 +32,3 @@ export default function SearchBar({ onSearchSubmit }: SearchBarProps) {
         </form>
     );
 }
-// !TODO finish it
