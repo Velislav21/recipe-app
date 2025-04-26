@@ -7,6 +7,7 @@ import HomeHeader from "./home-header/HomeHeader";
 import SkeletonLoader from "../loader/SkeletonLoader";
 
 import { useHomeRecipes } from "../../hooks/recipes/useHomeRecipes";
+import ErrorMessage from "../errors/ErrorMessage";
 
 export default function Home() {
     const [searchTerm, setSearchTerm] = useState("");
@@ -23,7 +24,7 @@ export default function Home() {
                 {isLoading ? (
                     <SkeletonLoader/>
                 ) : isError ? (
-                    <div>Error loading recipes: {error?.message}</div>
+                    <ErrorMessage>Error occured: {error.message}</ErrorMessage>
                 ) : data ? (
                     <>
                         <FeaturedRecipes

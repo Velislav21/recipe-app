@@ -1,0 +1,12 @@
+.err-msg {
+    width: fit-content;
+    display: flex;
+    margin: 10em auto;
+    box-shadow: 0.2em 0.2em 1em rgb(0,0,0, 0.1);
+    border-radius: 0.3rem;
+    letter-spacing: 0.05em;
+    padding: 2em;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: rgb(236, 78, 78);
+}
