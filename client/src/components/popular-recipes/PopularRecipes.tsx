@@ -6,18 +6,17 @@ type PopularRecipesProps = {
     popularRecipes: Recipe[];
 };
 
-export default function PopularRecipes({ popularRecipes }: PopularRecipesProps) {
+export default function PopularRecipes({
+    popularRecipes,
+}: PopularRecipesProps) {
     return (
         <section className={styles["popular-recipes-section"]}>
             <h1>Popular Recipes</h1>
 
             <div className={styles["popular-recipes-container"]}>
-                
-                {
-                !popularRecipes ? <div>Loading...</div>
-                :
-                popularRecipes.map((recipe) => <PopularRecipeItem key={recipe.id} {...recipe} />)
-                }
+                {popularRecipes.map((recipe) => (
+                    <PopularRecipeItem key={recipe.id} {...recipe} />
+                ))}
             </div>
         </section>
     );

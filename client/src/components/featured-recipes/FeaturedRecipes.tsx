@@ -12,12 +12,8 @@ export default function FeaturedRecipes({ featuredRecipes }: FeaturedRecipes) {
         <section className={styles["featured-recipes-section"]}>
             <h1>Featured Recipes</h1>
             <div className={styles["featured-recipes-container"]}>
-                {!featuredRecipes ? (
-                    <div>Loading...</div>
-                )
-                : 
-                featuredRecipes.map((recipe) => <FeaturedRecipeItem key={recipe.id} {...recipe} />)
-            }
+                {featuredRecipes.map((recipe) => (
+                    <FeaturedRecipeItem key={recipe.id} {...recipe} />))}
             </div>
         </section>
     );

@@ -5,6 +5,8 @@ import RecipeHeader from "../../recipe-details/details-header/RecipeDetailsHeade
 
 import styles from "./CategoryPage.module.css";
 import LoadMoreBtn from "../../ui/load-more-btn/LoadMoreBtn";
+import SkeletonLoader from "../../loader/SkeletonLoader";
+import ErrorMessage from "../../errors/ErrorMessage";
 
 export default function CategoryPage() {
     const { category } = useParams<{ category: string }>();
@@ -23,15 +25,15 @@ export default function CategoryPage() {
     return (
         <>
             {isLoading ? (
-                <div>Loading...</div>
+                <SkeletonLoader/>
             ) : isError ? (
-                <div>Error loading recipes: {error.message}</div>
+                <ErrorMessage>Error loading recipes: {error.message}</ErrorMessage>
             ) : data ? (
                 <>
                     <RecipeHeader image={allRecipes[0].image} />
                     <main>
                         <section className={styles["similar-recipes-section"]}>
-                            <h1>Category based recipes</h1>
+                            <h1>Category based recipes: {category}</h1>
                             <div
                                 className={styles["similar-recipes-container"]}
                             >

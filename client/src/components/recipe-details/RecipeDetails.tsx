@@ -4,29 +4,40 @@ import CookingDetails from "./cooking-details/CookingDetails";
 import RecipeDetailsHeader from "./details-header/RecipeDetailsHeader";
 import IngredientList from "./ingredients/IngredientsList";
 import { InstructionsList } from "./instructions/InstructionsList";
+import SkeletonLoader from "../loader/SkeletonLoader";
+import ErrorMessage from "../errors/ErrorMessage";
 
 export default function RecipeDetails() {
     const { recipeId } = useParams();
     const { data, error, isLoading, isError } = useRecipeDetails(recipeId);
     return (
         <>
-            {isLoading ? (
-                <div>Loading...</div>
-            ) : isError ? (
-                <div>Error loading recipes: {error.message}</div>
-            ) : data ? (
-                <>
-                    <RecipeDetailsHeader
-                        image={data.image}
-                        title={data.title}
-                    />
-                    <main>
-                        <CookingDetails readyInMinutes={data.readyInMinutes} servings={data.servings}/>
-                        <IngredientList ingredients={data.extendedIngredients} />
-                        <InstructionsList instructions={data.analyzedInstructions}/>
-                    </main>
-                </>
-            ) : null}
+            <main>
+                {isLoading ? (
+                    <SkeletonLoader />
+                ) : isError ? (
+                    <ErrorMessage>
+                        Error loading recipes: {error.message}
+                    </ErrorMessage>
+                ) : data ? (
+                    <>
+                        <RecipeDetailsHeader
+                            image={data.image}
+                            title={data.title}
+                        />
+                        <CookingDetails
+                            readyInMinutes={data.readyInMinutes}
+                            servings={data.servings}
+                        />
+                        <IngredientList
+                            ingredients={data.extendedIngredients}
+                        />
+                        <InstructionsList
+                            instructions={data.analyzedInstructions}
+                        />
+                    </>
+                ) : null}
+            </main>
         </>
     );
 }
