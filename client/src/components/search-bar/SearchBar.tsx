@@ -13,7 +13,6 @@ export default function SearchBar({ onSearchSubmit }: SearchBarProps) {
 
         const formData = new FormData(event.currentTarget);
         const searchValue = formData.get("searchValue") as string;
-
         if (searchValue) {
             onSearchSubmit(searchValue.trim());
         }

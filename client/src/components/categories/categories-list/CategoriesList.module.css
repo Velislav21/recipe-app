@@ -6,3 +6,9 @@ section.category-section {
     grid-template-columns: repeat(5, 1fr);
     gap: 1em;
 }
+
+@media (width <= 400px) {
+    .categories-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

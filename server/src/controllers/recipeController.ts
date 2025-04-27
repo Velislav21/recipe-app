@@ -14,7 +14,6 @@ const recipeController = Router();
 recipeController.get("/", async (req: Request, res: Response) => {
     const searchTerm = req.query.searchTerm as string;
     let url = "/recipes/random/?number=7";
-    console.log(searchTerm.replaceAll(" ", ",")); 
     if (searchTerm) {
         url += `&include-tags=${searchTerm.replaceAll(" ", ",")}`;
     }

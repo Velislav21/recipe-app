@@ -1,7 +1,7 @@
 .err-msg {
     width: fit-content;
     display: flex;
-    margin: 10em auto;
+    margin: auto;
     box-shadow: 0.2em 0.2em 1em rgb(0,0,0, 0.1);
     border-radius: 0.3rem;
     letter-spacing: 0.05em;

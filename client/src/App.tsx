@@ -23,7 +23,6 @@ function App() {
                 <Route path="/" Component={Home} />
                 <Route path="/recipe/:recipeId" Component={RecipeDetails} />
                 <Route path="/category/:category" Component={CategoryPage} />
-
                 <Route path="*" Component={ErrorPage}/>
             </Routes>
             <Footer />
