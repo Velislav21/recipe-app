@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosClient = axios.create({
-    baseURL: "https://recipes-server-419272414026.europe-west4.run.app",
+    baseURL: import.meta.env.VITE_APP_SERVER_URL,
     headers: {
         "Content-Type": "application/json",
     },
