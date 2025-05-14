@@ -80,7 +80,7 @@ The app allows users to browse, and search recipes with a clean UI and robust se
 
 1. **Clone the repository and navigate to the backend folder:**
     ```sh
-    git clone https://github.com/yourusername/recipe-app.git
+    git clone https://github.com/Velislav21/recipe-app.git
     cd recipe-app/server
     ```
 
